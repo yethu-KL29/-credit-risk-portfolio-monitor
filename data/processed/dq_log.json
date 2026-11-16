@@ -1,0 +1,116 @@
+[
+  {
+    "table": "customers",
+    "issue": "gender coded 'M'/'F' as well as 'Male'/'Female'",
+    "rows_affected": 600,
+    "decision": "Standardised to Male/Female."
+  },
+  {
+    "table": "customers",
+    "issue": "missing years_employed",
+    "rows_affected": 500,
+    "decision": "Kept rows. Median-imputed for the model + '<col>_missing' flag; shown as 'Unknown' in analytics."
+  },
+  {
+    "table": "customers",
+    "issue": "missing num_dependents",
+    "rows_affected": 500,
+    "decision": "Kept rows. Median-imputed for the model + '<col>_missing' flag; shown as 'Unknown' in analytics."
+  },
+  {
+    "table": "customers",
+    "issue": "missing years_at_residence",
+    "rows_affected": 500,
+    "decision": "Kept rows. Median-imputed for the model + '<col>_missing' flag; shown as 'Unknown' in analytics."
+  },
+  {
+    "table": "loan_accounts",
+    "issue": "missing interest_rate_pct",
+    "rows_affected": 294,
+    "decision": "Kept rows. Imputed with the loan-type median for the model + 'rate_missing' flag."
+  },
+  {
+    "table": "bureau_credit",
+    "issue": "missing days_past_due",
+    "rows_affected": 689,
+    "decision": "Kept lines. Ignored in max/mean DPD (nan-aware); count of unknown-DPD lines kept as a feature."
+  },
+  {
+    "table": "bureau_credit",
+    "issue": "date_closed null",
+    "rows_affected": 11243,
+    "decision": "Expected: null for Active lines only (verified); no action."
+  },
+  {
+    "table": "keys",
+    "issue": "duplicate customer_id / account_id / bureau_id",
+    "rows_affected": 0,
+    "decision": "None found; keys unique."
+  },
+  {
+    "table": "keys",
+    "issue": "loan accounts with no customer record",
+    "rows_affected": 0,
+    "decision": "None found. LEFT joins from the loan spine used so no account could be dropped silently."
+  },
+  {
+    "table": "keys",
+    "issue": "repayment rows with no loan account",
+    "rows_affected": 0,
+    "decision": "None found."
+  },
+  {
+    "table": "keys",
+    "issue": "collections rows with no loan account",
+    "rows_affected": 0,
+    "decision": "None found."
+  },
+  {
+    "table": "repayment_history",
+    "issue": "duplicate (account, month) rows",
+    "rows_affected": 0,
+    "decision": "None found."
+  },
+  {
+    "table": "repayment_history",
+    "issue": "emi_paid > emi_due",
+    "rows_affected": 0,
+    "decision": "None found."
+  },
+  {
+    "table": "bureau_credit",
+    "issue": "outstanding > sanctioned",
+    "rows_affected": 0,
+    "decision": "None found."
+  },
+  {
+    "table": "loan_accounts",
+    "issue": "loan_amount outliers (> 99th pct)",
+    "rows_affected": 147,
+    "decision": "Kept (mostly mortgages, legitimate). Model uses log(loan_amount) and loan-to-income to tame skew."
+  },
+  {
+    "table": "collections_events",
+    "issue": "collections activity is a consequence of delinquency",
+    "rows_affected": 4278,
+    "decision": "EXCLUDED from model features (post-event leakage). Used only for dashboard context."
+  },
+  {
+    "table": "customers",
+    "issue": "customers without loan accounts",
+    "rows_affected": 0,
+    "decision": "Kept in customer table; irrelevant to account-grain dataset."
+  },
+  {
+    "table": "bureau_credit",
+    "issue": "accounts whose customer has no bureau line",
+    "rows_affected": 1462,
+    "decision": "Bureau counts/amounts set to 0 (genuinely no external credit); DPD left null."
+  },
+  {
+    "table": "collections_events",
+    "issue": "accounts with no collections event",
+    "rows_affected": 10407,
+    "decision": "Event counts set to 0 (structural zero)."
+  }
+]

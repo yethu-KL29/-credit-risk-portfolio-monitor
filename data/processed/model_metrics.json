@@ -1,0 +1,214 @@
+{
+  "lr": {
+    "auc": 0.6632,
+    "gini": 0.3264,
+    "ks": 0.2428
+  },
+  "gbm": {
+    "auc": 0.6667,
+    "gini": 0.3334,
+    "ks": 0.2368
+  },
+  "n_train": 10279,
+  "n_test": 4406,
+  "default_rate": 0.161,
+  "cv_oof": {
+    "lr": {
+      "auc": 0.6788,
+      "gini": 0.3575,
+      "ks": 0.2651
+    },
+    "gbm": {
+      "auc": 0.6753,
+      "gini": 0.3505,
+      "ks": 0.2618
+    }
+  },
+  "importance": [
+    {
+      "feature": "annual_income",
+      "auc_drop": 0.02456
+    },
+    {
+      "feature": "years_employed",
+      "auc_drop": 0.01357
+    },
+    {
+      "feature": "rep_mean_dpd",
+      "auc_drop": 0.01165
+    },
+    {
+      "feature": "age",
+      "auc_drop": 0.00648
+    },
+    {
+      "feature": "loan_to_income",
+      "auc_drop": 0.00574
+    },
+    {
+      "feature": "bureau_mean_dpd",
+      "auc_drop": 0.00508
+    },
+    {
+      "feature": "rep_late_rate",
+      "auc_drop": 0.00465
+    },
+    {
+      "feature": "bureau_max_dpd",
+      "auc_drop": 0.00129
+    },
+    {
+      "feature": "bureau_active",
+      "auc_drop": 0.00102
+    },
+    {
+      "feature": "years_at_residence",
+      "auc_drop": 0.00029
+    },
+    {
+      "feature": "loan_amount",
+      "auc_drop": 0.00011
+    },
+    {
+      "feature": "marital_status",
+      "auc_drop": 0.0
+    },
+    {
+      "feature": "education_level",
+      "auc_drop": 0.0
+    },
+    {
+      "feature": "housing_type",
+      "auc_drop": 0.0
+    },
+    {
+      "feature": "disbursal_channel",
+      "auc_drop": 0.0
+    }
+  ],
+  "lr_coefficients": [
+    {
+      "feature": "cat__marital_status_Widowed",
+      "coef": -0.3545
+    },
+    {
+      "feature": "cat__city_tier_Tier 1",
+      "coef": -0.2528
+    },
+    {
+      "feature": "num__loan_amount",
+      "coef": 0.2513
+    },
+    {
+      "feature": "num__annual_income",
+      "coef": -0.2456
+    },
+    {
+      "feature": "cat__loan_type_Business Loan",
+      "coef": -0.2389
+    },
+    {
+      "feature": "cat__disbursal_channel_Branch",
+      "coef": -0.2375
+    },
+    {
+      "feature": "num__rep_late_rate",
+      "coef": 0.2224
+    },
+    {
+      "feature": "cat__housing_type_Mortgaged",
+      "coef": -0.2127
+    },
+    {
+      "feature": "cat__region_West",
+      "coef": -0.2017
+    },
+    {
+      "feature": "cat__housing_type_Owned",
+      "coef": -0.1974
+    },
+    {
+      "feature": "cat__education_level_Vocational",
+      "coef": -0.1944
+    },
+    {
+      "feature": "cat__employment_type_Salaried",
+      "coef": -0.1932
+    },
+    {
+      "feature": "cat__employment_type_Self-Employed",
+      "coef": -0.192
+    },
+    {
+      "feature": "num__bureau_active",
+      "coef": -0.1879
+    },
+    {
+      "feature": "cat__employment_type_Contract",
+      "coef": -0.1869
+    }
+  ],
+  "calibration": [
+    {
+      "decile": 1,
+      "avg_pd": 0.0781,
+      "actual": 0.068
+    },
+    {
+      "decile": 2,
+      "avg_pd": 0.0951,
+      "actual": 0.0726
+    },
+    {
+      "decile": 3,
+      "avg_pd": 0.1072,
+      "actual": 0.1045
+    },
+    {
+      "decile": 4,
+      "avg_pd": 0.119,
+      "actual": 0.1111
+    },
+    {
+      "decile": 5,
+      "avg_pd": 0.1314,
+      "actual": 0.1455
+    },
+    {
+      "decile": 6,
+      "avg_pd": 0.1461,
+      "actual": 0.1678
+    },
+    {
+      "decile": 7,
+      "avg_pd": 0.1646,
+      "actual": 0.1477
+    },
+    {
+      "decile": 8,
+      "avg_pd": 0.1905,
+      "actual": 0.1723
+    },
+    {
+      "decile": 9,
+      "avg_pd": 0.2338,
+      "actual": 0.2591
+    },
+    {
+      "decile": 10,
+      "avg_pd": 0.34,
+      "actual": 0.3605
+    }
+  ],
+  "monitoring": {
+    "score_psi_early_vs_late": 0.0024,
+    "feature_psi": {
+      "annual_income": 0.0024,
+      "rep_missed_rate": 0.0009,
+      "rep_mean_dpd": 0.0028,
+      "bureau_utilisation": 0.0013,
+      "loan_amount": 0.0011
+    },
+    "cohort_definition": "origination 2018-2020 vs 2021-2023"
+  }
+}

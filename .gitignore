@@ -1,0 +1,13 @@
+.env
+.streamlit/secrets.toml
+__pycache__/
+.pytest_cache/
+data/processed/review_decisions.csv
+data/processed/review_audit_log.csv
+
+# originals duplicated in data/raw
+/*.csv
+/DATA_DICTIONARY.md
+/*.pdf
+data/processed/model.joblib
+data/processed/anomaly_scores_all.parquet
