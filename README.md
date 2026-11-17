@@ -1,3 +1,13 @@
+---
+title: Credit Risk Portfolio Monitor
+emoji: 📊
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # Credit Risk Portfolio Monitor
 
 Streamlit dashboard over 5 synthetic bank tables, with two embedded AI features: **Ask the Portfolio** (grounded LLM Q&A) and

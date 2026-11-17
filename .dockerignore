@@ -1,0 +1,12 @@
+.git
+.env
+.streamlit/secrets.toml
+__pycache__/
+*.pyc
+.pytest_cache/
+tests/
+/*.csv
+/*.pdf
+/DATA_DICTIONARY.md
+/SOLUTION_NOTES.md
+/GITHUB_PUSH_TROUBLESHOOTING.md

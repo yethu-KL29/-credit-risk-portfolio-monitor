@@ -11,3 +11,6 @@ data/processed/review_audit_log.csv
 /*.pdf
 data/processed/model.joblib
 data/processed/anomaly_scores_all.parquet
+
+# personal notes, not part of the submission
+/GITHUB_PUSH_TROUBLESHOOTING.md
